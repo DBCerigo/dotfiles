@@ -97,6 +97,13 @@ endfunction
 vmap <silent> <expr> p <sid>Repl()
 
 " ### Looks ###
+" ## A Bundle Manager for some shit ##
+" Probably need it for the solarized install, should figure...
+" using Pathogen to autoload plugins
+call pathogen#infect()
+syntax on
+"filetype plugin indent on !!! think this actually disables the plugin jams
+syntax enable
 " colouring and look of files
 set background=dark
 " don't use in terminal? not sure should figure...
@@ -144,13 +151,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" ## A Bundle Manager for some shit ##
-" Probably need it for the solarized install, should figure...
-" using Pathogen to autoload plugins
-call pathogen#infect()
-syntax on
-"filetype plugin indent on !!! think this actually disables the plugin jams
-syntax enable
 
 
 " ### Tagging ###

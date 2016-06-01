@@ -20,8 +20,6 @@ nnoremap <leader>x :x<cr>
 " Remove that such fucking annoying popup window ting
 map q: :q
 " Map <space> movments to changing panes
-nnoremap <leader>j <C-W><C-J>
-nnoremap <leader>k <C-W><C-K>
 nnoremap <leader>l <C-W><C-L>
 nnoremap <leader>h <C-W><C-H>
 " Resizing short cuts
@@ -114,8 +112,16 @@ colorscheme solarized
 set hlsearch
 " Turn on line numbers
 set number
+" ## Folding ##
 " Set fold style to indent
 set foldmethod=indent
+" Set nothing over default of #
+set foldignore=
+" Mappings
+nnoremap <leader>j zj
+nnoremap <leader>k zk
+nnoremap <leader>a zA
+nnoremap <leader>i zi
 " Show tab markers TODo?
 
 " ### Writing help ### 

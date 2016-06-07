@@ -33,7 +33,7 @@ set splitright
 let g:netrw_banner=0
 " Hiding files matching in explorer - NOTE: 'a' to toggle hiding
 " grabs regex from gitignore files that it can find also
-let g:netrw_list_hide= '.*\.swp$,.*\.sw?$,.*\.pyc,^\.[^\.]'    " netrw_gitignore#Hide() . !! this seems to be fucking up
+let g:netrw_list_hide= '.*\.swp$,.*\.sw?$,.*\.pyc,.*\.retry,^\.[^\.]'    " netrw_gitignore#Hide() . !! this seems to be fucking up
 " # Normalises widths # of open buffers - except if one has been fixed
 fun! NormalizeWidths()
     let eadir_pref = &eadirection

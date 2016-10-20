@@ -1,6 +1,9 @@
 # quick type for cd
 alias fd='cd'
 
+# for quick virtualenv activate
+alias vp='source venv/bin/activate'
+
 # GIT SHIT
 alias g='git'
 # Autocomplete for 'g' as well

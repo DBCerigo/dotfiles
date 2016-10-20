@@ -1,0 +1,17 @@
+[user]
+	name = dbcerigo
+	email = dbcerigo@gmail.com
+[core]
+	excludesfile = /Users/Cerigo/.gitignore_global
+	editor = /usr/local/bin/vim
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[alias]
+  st = status
+  ci = commit
+  pl = pull
+  ps = push
+[push]
+	default = simple

@@ -1,5 +1,13 @@
 " DBCerigo vimrc file
 
+" TODO: 
+" 1. Clean up/simplify package mangers (Vundle/Pathogen)
+
+" Requirements
+" 1. Install https://github.com/VundleVim/Vundle.vim then [:PluginInstall] in vim
+" 2. Install Pathogen https://github.com/tpope/vim-pathogen
+" 3. Install Solarized http://ethanschoonover.com/solarized/vim-colors-solarized
+
 " ## MAPPINGS ##
 " ### Mapped Space to be my 'leader key' ##### 
 " which means it begins a key combo input sequence

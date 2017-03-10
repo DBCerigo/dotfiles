@@ -7,7 +7,7 @@ export PATH="$PATH:/Applications/Muse"
 export DYLD_FALLBACK_LIBRARY_PATH="$DYLD_FALLBACK_LIBRARY_PATH:/Applications/Muse"
 
 # Show current Git branch name in bash PS1
-source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+source ~/.git-prompt.sh
 export PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
 
 # added to disallow pip usage unless in virtualenv

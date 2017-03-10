@@ -1,3 +1,10 @@
+# colour support for OSx and Linux
+if ls --version 2>/dev/null | grep -q 'coreutils'; then
+    alias ls='ls --color=always'
+else
+    alias ls='ls -G'
+fi
+
 # quick type for cd
 alias fd='cd'
 

@@ -18,9 +18,3 @@ gpip(){
 
 # added to make Octave plot without errors
 export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
-
-# added by Anaconda 2.1.0 installer
-# added custom function
-anacondapython(){
-   export PATH="//anaconda/bin:$PATH"
-}

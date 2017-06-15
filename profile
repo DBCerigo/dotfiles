@@ -18,3 +18,6 @@ gpip(){
 
 # added to make Octave plot without errors
 export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
+
+# add brew bins to path
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH

@@ -34,3 +34,7 @@ mkcd () {
 					 *) mkdir -p "./$1" && cd "./$1";;
 					   esac
 }
+
+# specific for setting up pipe to aws instance for Jupyter Notebook serves
+shp () { ssh -L $1:localhost:$1 aws; } 
+

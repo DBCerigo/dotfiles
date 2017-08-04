@@ -21,3 +21,6 @@ export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
 
 # add brew bins to path
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+# added by Miniconda3 4.3.21 installer
+export PATH="/Users/dbcerigo/miniconda3/bin:$PATH"

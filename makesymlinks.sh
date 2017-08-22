@@ -8,7 +8,8 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="profile bash_profile bashrc inputrc vimrc gitconfig gitignore_global git-completion.bash git-prompt.sh screenrc ipython"    # list of files/folders to symlink in homedir
+# list of files/folders to symlink in homedir
+files="profile bash_profile bashrc inputrc vimrc gitconfig gitignore_global git-completion.bash git-prompt.sh screenrc ipython condarc"   
 
 ##########
 

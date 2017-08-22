@@ -8,7 +8,7 @@ bind "set show-all-if-ambiguous on"
 
 # Show current Git branch name in bash PS1
 source ~/.git-prompt.sh
-export PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
+export PROMPT_COMMAND='__git_ps1 "($CONDA_DEFAULT_ENV) \u@\h:\w" "\\\$ "'
 
 # added to disallow pip usage unless in virtualenv
 export PIP_REQUIRE_VIRTUALENV=true

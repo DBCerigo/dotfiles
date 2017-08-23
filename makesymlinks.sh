@@ -2,6 +2,8 @@
 ############################
 # .make.sh
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+# NOTE: this script only needs to be run once, once symlinked then of course...
+# ...changes to the dotfiles are reflected by the links
 ############################
 
 ########## Variables
@@ -9,7 +11,9 @@
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 # list of files/folders to symlink in homedir
-files="profile bash_profile bashrc inputrc vimrc gitconfig gitignore_global git-completion.bash git-prompt.sh screenrc ipython condarc"   
+files="profile bash_profile bashrc inputrc vimrc gitconfig "
+files+="gitignore_global git-completion.bash git-prompt.sh "
+files+="screenrc ipython condarc jupyter"
 
 ##########
 
@@ -25,7 +29,7 @@ echo "...done"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
+    echo "Moving $file dotfile from ~ to $olddir"
     mv ~/.$file ~/dotfiles_old/
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file

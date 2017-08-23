@@ -10,8 +10,9 @@ bind "set show-all-if-ambiguous on"
 source ~/.git-prompt.sh
 export PROMPT_COMMAND='__git_ps1 "($CONDA_DEFAULT_ENV) \u@\h:\w" "\\\$ "'
 
+# DISABLED as using conda now
 # added to disallow pip usage unless in virtualenv
-export PIP_REQUIRE_VIRTUALENV=true
+#export PIP_REQUIRE_VIRTUALENV=true
 gpip(){
    PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }

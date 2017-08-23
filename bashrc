@@ -10,6 +10,8 @@ alias fd='cd'
 
 # for quick virtualenv activate
 alias vp='source venv/bin/activate'
+# for quick conda env basePy3 activate
+alias sab='source activate basePy3'
 
 # GIT SHIT
 alias g='git'
@@ -19,6 +21,9 @@ source ~/.git-completion.bash
 
 # alias for opening ipython notebook in Python Files
 alias ipnb='cd /Users/Cerigo/Dropbox/IV/Project/Output/Python\ Files; ipython notebook'
+
+# specific for setting up pipe to aws instance for Jupyter Notebook serves
+shp () { ssh -L $1:localhost:$1 aws; } 
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
@@ -34,7 +39,4 @@ mkcd () {
 					 *) mkdir -p "./$1" && cd "./$1";;
 					   esac
 }
-
-# specific for setting up pipe to aws instance for Jupyter Notebook serves
-shp () { ssh -L $1:localhost:$1 aws; } 
 

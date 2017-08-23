@@ -19,9 +19,6 @@ alias g='git'
 complete -o default -o nospace -F _git g
 source ~/.git-completion.bash
 
-# alias for opening ipython notebook in Python Files
-alias ipnb='cd /Users/Cerigo/Dropbox/IV/Project/Output/Python\ Files; ipython notebook'
-
 # specific for setting up pipe to aws instance for Jupyter Notebook serves
 shp () { ssh -L $1:localhost:$1 aws; } 
 

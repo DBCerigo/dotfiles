@@ -14,6 +14,7 @@ alias vp='source venv/bin/activate'
 alias sab='source activate basePy3'
 
 # GIT SHIT
+# https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
 alias g='git'
 # Autocomplete for 'g' as well
 complete -o default -o nospace -F _git g

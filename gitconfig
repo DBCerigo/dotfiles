@@ -13,5 +13,6 @@
   ci = commit
   pl = pull
   ps = push
+  ds = diff --staged
 [push]
 	default = simple

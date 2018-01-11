@@ -9,6 +9,8 @@
 	smudge = git hawser smudge %f
 	required = true
 [alias]
+    co = checkout
+    br = branch
     st = status
     ci = commit
     pl = pull

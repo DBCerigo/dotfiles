@@ -2,6 +2,7 @@
 
 " TODO: 
 " 1. Clean up/simplify package mangers (Vundle/Pathogen)
+" 2. Add if OS switch so optimised for using on server and local
 
 " Requirements
 " 1. Install https://github.com/VundleVim/Vundle.vim then [:PluginInstall] in vim

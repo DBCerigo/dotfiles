@@ -142,7 +142,7 @@ nnoremap <leader>i zi
 "filetype plugin on
 "set omnifunc=syntaxcomplete#Complete
 " Spell checking
-set spell spelllang=en_us
+set spell spelllang=en_gb
 " Faster load for files larger than 10mb but they not editable 
 let g:LargeFile=10
 
@@ -172,8 +172,6 @@ filetype plugin indent on    " required
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-
 
 " ### Tagging ###
 " does something with the tagging system, which I don't yet use so

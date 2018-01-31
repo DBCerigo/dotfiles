@@ -16,6 +16,9 @@ let mapleader="\<Space>"
 " On 'nnoremap' see http://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping
 " !!! Watch out for trailing white space !!!
 
+" # force autoreload on changes to file on disk (nice)
+set autoread
+
 " ##### Paning #####
 " ## File nav and control ##
 " Map <space-e> to open explorer on left pane

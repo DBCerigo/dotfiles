@@ -124,6 +124,9 @@ colorscheme solarized
 " Turn on highlighting search
 " Use ':noh' to kill last search
 set hlsearch
+" ## Extra Whitespace Highlight ##
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 " Turn on line numbers
 set number
 " ## Folding ##

@@ -23,7 +23,7 @@ complete -o default -o nospace -F _git g
 source ~/.git-completion.bash
 
 # specific for setting up pipe to aws instance for Jupyter Notebook serves
-shp () { ssh -L $1:localhost:$1 aws; } 
+shp () { ssh -L $1:localhost:$1 aws; }
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=

@@ -12,6 +12,8 @@ alias fd='cd'
 alias vp='source venv/bin/activate'
 # for quick conda env basePy3 activate
 alias sab='source activate basePy3'
+# for quick port fowarding on 7777 to spark-master
+alias spf='ssh -L localhost:7777:localhost:7777 sm'
 
 # GIT SHIT
 # https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
@@ -26,7 +28,6 @@ shp () { ssh -L $1:localhost:$1 aws; }
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
-# User specific aliases and functions
 mkcd () {
 		  case "$1" in
 				      */..|*/../) cd -- "$1";; # that doesn't make any sense unless the directory already exists

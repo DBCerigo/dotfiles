@@ -171,11 +171,11 @@ Plugin 'VundleVim/Vundle.vim'
 "   Can't get you complete me to work...
 "   Adds the status bar (including git branch etc.) at bottom of window
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-"   Syntax checking - could be useful if wanna get really anal
-Plugin 'scrooloose/syntastic'
+"   Syntax checking - could be useful if wanna get really anal - off for now
+"Plugin 'scrooloose/syntastic'
 " Disable (set to must toggle) it for now - and must use autocmd as plugin not
 " loaded until then.
-autocmd VimEnter * SyntasticToggleMode
+"autocmd VimEnter * SyntasticToggleMode
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

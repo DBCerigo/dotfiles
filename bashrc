@@ -12,6 +12,10 @@ alias fd='cd'
 alias vp='source venv/bin/activate'
 # for quick conda env basePy3 activate
 alias sab='source activate basePy3'
+# for quick conda env activate
+alias csa='source activate'
+# for quick conda env deactivate
+alias csd='source deactivate'
 # for quick port fowarding on 7777 to spark-master
 alias spf='ssh -L localhost:7777:localhost:7777 sm'
 

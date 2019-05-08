@@ -1,6 +1,6 @@
 " DBCerigo vimrc file
 
-" TODO: 
+" TODO:
 " 1. Clean up/simplify package mangers (Vundle/Pathogen)
 " 2. Add if OS switch so optimised for using on server and local
 
@@ -10,7 +10,7 @@
 " 3. Install Solarized http://ethanschoonover.com/solarized/vim-colors-solarized
 
 " ## MAPPINGS ##
-" ### Mapped Space to be my 'leader key' ##### 
+" ### Mapped Space to be my 'leader key' #####
 " which means it begins a key combo input sequence
 let mapleader="\<Space>"
 " On 'nnoremap' see http://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping
@@ -89,9 +89,9 @@ vnoremap <C-j> xp`[V`]
 " expand tabs to be series of spaces
 set expandtab
 " Set the number of spaces per tab
-set tabstop=4 
+set tabstop=4
 " Set the number of spaces per indent to be four spaces
-set shiftwidth=4 
+set shiftwidth=4
 " ## Fix Backspace ##
 " In insert mode, to allow the backspace key to erase previously entered characters, autoindent, and newlines,
 set bs=indent,eol,start
@@ -123,7 +123,7 @@ syntax enable
 set background=dark
 " don't use in terminal? not sure should figure...
 let g:solarized_termcolors=256
-colorscheme solarized 
+colorscheme solarized
 " Turn on highlighting search
 " Use ':noh' to kill last search
 set hlsearch
@@ -147,12 +147,12 @@ nnoremap <leader>a zA
 nnoremap <leader>i zi
 " Show tab markers TODo?
 
-" ### Writing help ### 
+" ### Writing help ###
 "filetype plugin on
 "set omnifunc=syntaxcomplete#Complete
 " Spell checking
 set spell spelllang=en_gb
-" Faster load for files larger than 10mb but they not editable 
+" Faster load for files larger than 10mb but they not editable
 let g:LargeFile=10
 
 " ### Bundle ### !!! Keep this shit to a minimum !!!
@@ -166,7 +166,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" Add all your plugins HERE 
+" Add all your plugins HERE
 " Plugin 'Valloric/YouCompleteMe'
 "   Can't get you complete me to work...
 "   Adds the status bar (including git branch etc.) at bottom of window

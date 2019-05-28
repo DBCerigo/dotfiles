@@ -151,7 +151,9 @@ nnoremap <leader>i zi
 "filetype plugin on
 "set omnifunc=syntaxcomplete#Complete
 " Spell checking
-set spell spelllang=en_gb
+set spell
+set spelllang=en_gb
+set spellfile=$HOME/.vim-spell-en.utf-8.add
 " Faster load for files larger than 10mb but they not editable
 let g:LargeFile=10
 

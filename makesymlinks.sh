@@ -13,7 +13,7 @@ olddir=~/dotfiles_old             # old dotfiles backup directory
 # list of files/folders to symlink in homedir
 files="profile bash_profile bashrc inputrc vimrc gitconfig "
 files+="gitignore_global git-completion.bash git-prompt.sh "
-files+="screenrc ipython condarc jupyter"
+files+="screenrc ipython condarc jupyter vim-spell-en.utf-8.add"
 
 ##########
 
@@ -27,7 +27,7 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
     echo "Moving $file dotfile from ~ to $olddir"
     mv ~/.$file ~/dotfiles_old/

@@ -154,7 +154,8 @@ nnoremap <leader>i zi
 set spell
 set spelllang=en_gb
 set spellfile=$HOME/.vim-spell-en.utf-8.add
-inoremap <C-y> <c-g>u<Esc>[s1z=`]a<c-g>u
+inoremap <C-n> <c-g>u<Esc>[s1z=`]a<c-g>u
+noremap <C-n> [s1z=`]
 " Faster load for files larger than 10mb but they not editable
 let g:LargeFile=10
 

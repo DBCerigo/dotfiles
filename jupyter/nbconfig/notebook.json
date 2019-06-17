@@ -1,0 +1,44 @@
+{
+  "load_extensions": {
+    "nbdime/index": true,
+    "jupyter-js-widgets/extension": true,
+    "nbextensions_configurator/config_menu/main": true,
+    "contrib_nbextensions_help_item/main": true,
+    "collapsible_headings/main": true,
+    "select_keymap/main": false,
+    "vim_binding/vim_binding": true
+  },
+  "Cell": {
+    "cm_config": {
+      "lineNumbers": false
+    }
+  },
+  "CodeCell": {
+    "cm_config": {
+      "autoCloseBrackets": false
+    }
+  },
+  "collapsible_headings": {
+    "shortcuts": {
+      "uncollapse": "l",
+      "collapse": "h",
+      "select": "shift-l"
+    },
+    "select_reveals": false
+  },
+  "keys": {
+    "command": {
+      "bind": {
+        "h": "collapsible_headings:collapse_heading",
+        "l": "collapsible_headings:uncollapse_heading",
+        "shift-h": "collapsible_headings:collapse_all_headings",
+        "shift-l": "collapsible_headings:select_heading_section",
+        "m": "jupyter-notebook:change-cell-to-markdown",
+        "c": "jupyter-notebook:change-cell-to-code"
+      },
+      "unbind": [
+        "l"
+      ]
+    }
+  }
+}

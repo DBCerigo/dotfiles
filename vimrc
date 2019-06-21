@@ -145,7 +145,11 @@ nnoremap <leader>j zj
 nnoremap <leader>k zk
 nnoremap <leader>a zA
 nnoremap <leader>i zi
-" Show tab markers TODo?
+nnoremap <leader>r zr
+nnoremap <leader>m zm
+nnoremap <leader>c zc
+nnoremap <leader>o zo
+" Show tab markers TODO? nah
 
 " ### Writing help ###
 "filetype plugin on

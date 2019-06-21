@@ -135,20 +135,26 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 " Turn on line numbers
 set number
-" ## Folding ##
+
+" ### Folding ###
 " Set fold style to indent
 set foldmethod=indent
 " Set nothing over default of #
 set foldignore=
-" Mappings
+" # Mappings #
+" toggle folding off/on
+nnoremap <leader>i zi
+" move between folds
 nnoremap <leader>j zj
 nnoremap <leader>k zk
+" 'open' fold all the way
 nnoremap <leader>a zA
-nnoremap <leader>i zi
+" zX undos all manually opened and closed folds - reset all back to set level
+" use for closing folds
+nnoremap <leader>z zX
+" use to set if wanting to fold classes, or fold function, etc.
 nnoremap <leader>r zr
 nnoremap <leader>m zm
-nnoremap <leader>c zc
-nnoremap <leader>o zo
 " Show tab markers TODO? nah
 
 " ### Writing help ###

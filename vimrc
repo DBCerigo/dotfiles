@@ -110,8 +110,8 @@ vmap <silent> <expr> p <sid>Repl()
 " ## Line length marker ##
 "   set column highlighting color
 highlight ColorColumn ctermbg=237 guibg=#2c2d27
-"   set column 81 to be highlighted if Python file
-autocmd FileType python let &colorcolumn="81"
+"   set column to be highlighted if Python file
+autocmd FileType python let &colorcolumn="101"
 " ## A Bundle Manager for some shit ##
 " Probably need it for the solarized install, should figure...
 " using Pathogen to autoload plugins

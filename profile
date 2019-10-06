@@ -8,8 +8,10 @@ bind "set show-all-if-ambiguous on"
 
 # Terminal Prompt
 # Show current Git branch name in bash PS1
+# Used PROMPT_COMMAND previously, but it meant that opening new tab in Terminal.app didn't do so in same dir
+# See for refs:https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 source ~/.git-prompt.sh
-export PROMPT_COMMAND='__git_ps1 "{\t} \u@\h:\w [$CONDA_DEFAULT_ENV]" "\\\$ "'
+export PS1='[$CONDA_DEFAULT_ENV] $(__git_ps1 "(%s) "){\t} \u@\h:\w \\$ '
 
 # DISABLED as using conda now
 # added to disallow pip usage unless in virtualenv

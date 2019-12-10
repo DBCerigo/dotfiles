@@ -13,6 +13,7 @@
     br = branch
     st = status
     ci = commit
+    ciane = commit --amend --no-edit
     pl = pull
     ps = push
     ds = diff --staged

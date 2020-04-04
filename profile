@@ -11,9 +11,9 @@ bind "set show-all-if-ambiguous on"
 # Used PROMPT_COMMAND previously, but it meant that opening new tab in Terminal.app didn't do so in same dir
 # See for refs:https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 source ~/.git-prompt.sh
-export PS1='[$CONDA_DEFAULT_ENV] $(__git_ps1 "(%s) "){\t} \u@\h:\w \\$ '
+export PS1='(pyenv$(pyenv version-name)) $(__git_ps1 "(%s) "){\t} \u@\h:\w \\$ '
 
-# DISABLED as using conda now
+# DISABLED
 # added to disallow pip usage unless in virtualenv
 #export PIP_REQUIRE_VIRTUALENV=true
 gpip(){
@@ -24,22 +24,10 @@ gpip(){
 export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
 
 # add brew bins to path
+# Note: `/usr/local/bin` will be added twice now, but this is ok
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-# added by Miniconda3 4.3.21 installer
-export PATH="/Users/dbcerigo/miniconda3/bin:$PATH"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/dbcerigo/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/dbcerigo/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/dbcerigo/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/dbcerigo/miniconda3/bin:$PATH"
-    fi
+# pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
 fi
-unset __conda_setup
-# <<< conda initialize <<<

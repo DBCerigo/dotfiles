@@ -8,14 +8,11 @@ fi
 # quick type for cd
 alias fd='cd'
 
-# for quick virtualenv activate
-alias vp='source venv/bin/activate'
-# for quick conda env basePy3 activate
-alias sab='source activate basePy3'
-# for quick conda env activate
-alias csa='source activate'
-# for quick conda env deactivate
-alias csd='conda deactivate'
+# for quick venv
+vsa() { source "$@"/bin/activate; }
+alias vsv='source .venv/bin/activate'
+alias vsd='deactivate'
+
 # for quick port fowarding on 7777 to spark-master
 alias spf='ssh -L localhost:7777:localhost:7777 sm'
 

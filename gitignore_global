@@ -31,3 +31,6 @@ Temporary Items
 *.swm
 *.swn
 *.sw? 
+
+# python venv ignores
+.venv*

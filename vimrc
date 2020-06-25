@@ -170,7 +170,7 @@ noremap <C-n> [s1z=`]
 let g:LargeFile=10
 
 " ### Bundle ### !!! Keep this shit to a minimum !!!
-" VUMBLE: vim bundle package manager
+" vundle: vim bundle package manager
 set nocompatible              " required
 filetype off                  " required
 " set the runtime path to include Vundle and initialize

@@ -169,6 +169,7 @@ noremap <C-n> [s1z=`]
 " Faster load for files larger than 10mb but they not editable
 let g:LargeFile=10
 
+
 " ### Bundle ### !!! Keep this shit to a minimum !!!
 " vundle: vim bundle package manager
 set nocompatible              " required
@@ -205,3 +206,10 @@ filetype plugin indent on    " required
 " ### Tagging ###
 " does something with the tagging system, which I don't yet use so
 "set tags=./tags;/
+"
+" ### ctrlp ###
+let g:ctrlp_user_command = [
+    \ '.git', 'cd %s && git ls-files . -co --exclude-standard',
+    \ 'find %s -type f'
+    \ ]
+

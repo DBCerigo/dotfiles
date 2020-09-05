@@ -22,7 +22,7 @@ Icon
 .AppleDesktop
 Network Trash Folder
 Temporary Items
-.apdisk 
+.apdisk
 
 # Swap files
 *.swp
@@ -30,10 +30,13 @@ Temporary Items
 *.swl
 *.swm
 *.swn
-*.sw? 
+*.sw?
 
-# python venv ignores
+# python
+# venv
 .venv*
+# pyenv
+.python-version
 
 # Dev notebooks
 Untitled*.ipynb

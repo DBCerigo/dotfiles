@@ -1,0 +1,16 @@
+Host aws
+	User ubuntu
+	HostName ec2-34-249-83-7.eu-west-1.compute.amazonaws.com
+Host aws2
+	User ubuntu
+	HostName ec2-52-31-55-250.eu-west-1.compute.amazonaws.com
+Host sm
+	User ec2-user
+	HostName ec2-34-241-34-94.eu-west-1.compute.amazonaws.com
+Host *
+    UseKeychain yes
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/mbp17prime
+    IdentityFile ~/.ssh/main.pem
+    ServerAliveInterval 60
+    ServerAliveCountMax 30

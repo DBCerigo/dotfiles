@@ -56,22 +56,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_SPC,  KC_ENT,  RAISE,   KC_RGUI, KC_RALT, KC_RCTL, _______
 ),
 
-/* Lower
+/* Lower (Symbols)
  * ,-----------------------------------------------------------------------------------.
- * |   ~  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  | Bksp |
+ * |      |   7  |   5  |   3  |   1  |   9  |   8  |   0  |   2  |   4  |   6  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Del  |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |   _  |   +  |   {  |   }  |  |   |
+ * |      |      |   #  |   %  |   !  |  [{  |  }]  |   -  |   _  |   =  |   +  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |ISO ~ |ISO | | Home | End  |      |
+ * |      |  \|  |   @  |   &  |   $  |   (  |  )   |   *  |   ^  |   `  |   ~  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
+ * |      |      |      |      |      |             |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
-    KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_LPRN, KC_RPRN, KC_BSPC,
-    KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_UNDS,    KC_PLUS,    KC_LCBR, KC_RCBR, KC_PIPE,
-    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  S(KC_NUHS), S(KC_NUBS), KC_HOME, KC_END,  _______,
-    _______, _______, _______, _______, _______, _______, _______, _______,    KC_MNXT,    KC_VOLD, KC_VOLU, KC_MPLY
+    _______, KC_7,    KC_5,       KC_3,       KC_1,       KC_9,       KC_8,       KC_0,       KC_2,          KC_4,   KC_6,         _______,
+    _______, XXXXXXX, LSFT(KC_3), LSFT(KC_5), LSFT(KC_1), KC_LBRC,    KC_RBRC,    KC_MINS,    LSFT(KC_MINS), KC_EQL, LSFT(KC_EQL), _______,
+    _______, KC_BSLS, LSFT(KC_2), LSFT(KC_7), LSFT(KC_4), LSFT(KC_9), LSFT(KC_0), LSFT(KC_8), LSFT(KC_6),    KC_GRV, LSFT(KC_GRV), _______,
+    _______, _______, _______, _______, _______, _______, _______, _______,    _______,    _______, _______, _______
 ),
 
 /* Raise

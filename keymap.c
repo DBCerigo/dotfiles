@@ -12,7 +12,9 @@ enum planck_layers {
 
 enum planck_keycodes {
   QWERTY = SAFE_RANGE,
-  COLEMAK
+  COLEMAK,
+  // Custom key functions
+  POUND_EURO
 };
 
 #define LOWER MO(_LOWER)
@@ -60,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |      |   7  |   5  |   3  |   1  |   9  |   8  |   0  |   2  |   4  |   6  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |   #  |   %  |   !  |  [{  |  }]  |   -  |   _  |   =  |   +  |      |
+ * |      |  £€  |   #  |   %  |   !  |  [{  |  }]  |   -  |   _  |   =  |   +  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |  \|  |   @  |   &  |   $  |   (  |  )   |   *  |   ^  |   `  |   ~  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -68,9 +70,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
-    _______, KC_7,    KC_5,       KC_3,       KC_1,       KC_9,       KC_8,       KC_0,       KC_2,          KC_4,   KC_6,         _______,
-    _______, XXXXXXX, LSFT(KC_3), LSFT(KC_5), LSFT(KC_1), KC_LBRC,    KC_RBRC,    KC_MINS,    LSFT(KC_MINS), KC_EQL, LSFT(KC_EQL), _______,
-    _______, KC_BSLS, LSFT(KC_2), LSFT(KC_7), LSFT(KC_4), LSFT(KC_9), LSFT(KC_0), LSFT(KC_8), LSFT(KC_6),    KC_GRV, LSFT(KC_GRV), _______,
+    _______, KC_7,       KC_5,       KC_3,       KC_1,       KC_9,       KC_8,       KC_0,       KC_2,          KC_4,   KC_6,         _______,
+    _______, POUND_EURO, LSFT(KC_3), LSFT(KC_5), LSFT(KC_1), KC_LBRC,    KC_RBRC,    KC_MINS,    LSFT(KC_MINS), KC_EQL, LSFT(KC_EQL), _______,
+    _______, KC_BSLS,    LSFT(KC_2), LSFT(KC_7), LSFT(KC_4), LSFT(KC_9), LSFT(KC_0), LSFT(KC_8), LSFT(KC_6),    KC_GRV, LSFT(KC_GRV), _______,
     _______, _______, _______, _______, _______, _______, _______, _______,    _______,    _______, _______, _______
 ),
 
@@ -128,6 +130,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case COLEMAK:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_COLEMAK);
+      }
+      return false;
+      break;
+    case POUND_EURO:
+      if (record->event.pressed) {
+        if (get_mods() & MOD_MASK_SHIFT) {
+          send_unicode_string("€");
+        } else {
+          send_unicode_string("£");
+        }
       }
       return false;
       break;

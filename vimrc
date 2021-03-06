@@ -164,6 +164,14 @@ nnoremap <leader>m zm
 set spell
 set spelllang=en_gb
 set spellfile=$HOME/.vim-spell-en.utf-8.add
+hi clear SpellBad
+hi SpellBad cterm=underline
+hi clear SpellRare
+hi SpellRare cterm=underline
+hi clear SpellCap
+hi SpellCap cterm=underline
+hi clear SpellLocal
+hi SpellLocal cterm=underline
 inoremap <C-n> <c-g>u<Esc>[s1z=`]a<c-g>u
 noremap <C-n> [s1z=`]
 " Faster load for files larger than 10mb but they not editable

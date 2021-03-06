@@ -1,3 +1,14 @@
+# Terminal Prompt
+# Show current Git branch name in bash PS1
+# Used PROMPT_COMMAND previously, but it meant that opening new tab in Terminal.app didn't do so in same dir
+# See for refs:https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+source ~/.git-prompt.sh
+export PS1='(pyenv$(pyenv version-name)) $(__git_ps1 "(%s) "){\t} \u@\h:\w \\$ '
+
+# Added for case insensitive autocomplete
+bind "set completion-ignore-case on"
+bind "set show-all-if-ambiguous on"
+
 # colour support for OSx and Linux
 if ls --version 2>/dev/null | grep -q 'coreutils'; then
     alias ls='ls --color=always'

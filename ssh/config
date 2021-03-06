@@ -1,6 +1,5 @@
 Host *
     AddKeysToAgent yes
-    IdentityFile ~/.ssh/mbp17prime
-    IdentityFile ~/.ssh/main.pem
+    IdentityFile ~/.ssh/id_rsa
     ServerAliveInterval 60
     ServerAliveCountMax 30

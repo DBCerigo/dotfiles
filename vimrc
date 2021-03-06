@@ -192,9 +192,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Add all your plugins HERE
 " Plugin 'Valloric/YouCompleteMe'
 "   Can't get you complete me to work...
-"   Adds the status bar (including git branch etc.) at bottom of window
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-"   Syntax checking - could be useful if wanna get really anal - off for now
+" Adds the status bar (including git branch etc.) at bottom of window
+Plugin 'powerline/powerline'
+" Syntax checking - could be useful if wanna get really anal - off for now
 "Plugin 'scrooloose/syntastic'
 " Disable (set to must toggle) it for now - and must use autocmd as plugin not
 " loaded until then.

@@ -23,10 +23,6 @@ gpip(){
 # added to make Octave plot without errors
 export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
 
-# add brew bins to path
-# Note: `/usr/local/bin` will be added twice now, but this is ok
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"

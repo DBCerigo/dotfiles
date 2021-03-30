@@ -72,10 +72,10 @@ endf
 
 " ### Text Wrangling ###
 " ## Auto complete ##
-" Map cmd j to ctr-N for start auto and choose down
-inoremap <D-j> <C-N>
-" Map cmd k to ctr-P for start auto
-inoremap <D-k> <C-P>
+" Map atl j to ctr-N for start auto and choose down
+inoremap <A-j> <C-N>
+" Map atl k to ctr-P for start auto
+inoremap <A-k> <C-P>
 " Auto complete configuration
 set completeopt=longest,menuone
 " ## Bubbling text ##

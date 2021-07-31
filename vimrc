@@ -103,7 +103,8 @@ set tabstop=4
 " Set the number of spaces per indent to be four spaces
 set shiftwidth=4
 " ## Fix Backspace ##
-" In insert mode, to allow the backspace key to erase previously entered characters, autoindent, and newlines,
+" In insert mode, to allow the backspace key to erase previously entered
+" characters, autoindent, and newlines.
 set bs=indent,eol,start
 " ## vp doesn't replace paste buffer FRESH
 function! RestoreRegister()
@@ -116,12 +117,30 @@ function! s:Repl()
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
-" ### Looks ###
-" ## Line length marker ##
-"   set column highlighting color
+" ### File Specific Settings ###
+" # Line length marker #
+"   Set column highlighting color.
 highlight ColorColumn ctermbg=237 guibg=#2c2d27
-"   set column to be highlighted if Python file
-autocmd FileType python let &colorcolumn="101"
+"   Assuming 99 line limit, so set column 100 to be highlighted.
+"   Set textwidth to 99, to enable proper formatting when using `gq`.
+"   Add or remove `t` from formatoptions to enable or disable auto
+"   linewrapping.
+augroup python_file
+    autocmd!
+    autocmd FileType python
+        \ let &colorcolumn="100" |
+        \ set textwidth=99 |
+        \ set formatoptions-=t
+augroup END
+augroup markdown_file
+    autocmd!
+    autocmd FileType markdown
+        \ let &colorcolumn="100" |
+        \ set textwidth=99 |
+        \ set formatoptions+=t
+augroup END
+
+" ### Looks ###
 " ## A Bundle Manager for some shit ##
 " Probably need it for the solarized install, should figure...
 " using Pathogen to autoload plugins

@@ -27,3 +27,5 @@
     abbrevCommit = true
 [merge]
 	ff = false
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret

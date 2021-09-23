@@ -19,6 +19,10 @@ fi
 # quick type for cd
 alias fd='cd'
 
+# quick make
+alias m='make'
+alias f='make format'
+
 # for quick venv
 vsa() { source "$@"/bin/activate; }
 alias vsv='source .venv/bin/activate'

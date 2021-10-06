@@ -22,6 +22,8 @@ alias fd='cd'
 # quick make
 alias m='make'
 alias f='make format'
+# annoying metafont
+alias mf='make'
 
 # for quick venv
 vsa() { source "$@"/bin/activate; }

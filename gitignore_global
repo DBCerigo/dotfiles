@@ -35,8 +35,10 @@ Temporary Items
 # python
 # venv
 .venv*
+
 # pyenv
-.python-version
+# remove this ignore as when working on projects (not modules/packages) want to be able to set
+#.python-version
 
 # Dev notebooks
 Untitled*.ipynb

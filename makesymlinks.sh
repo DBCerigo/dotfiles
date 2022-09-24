@@ -14,7 +14,7 @@ olddir=~/dotfiles_old             # old dotfiles backup directory
 files="profile bash_profile bashrc inputrc vimrc gitconfig "
 files="${files} gitignore_global git-completion.bash git-prompt.sh "
 files="${files} screenrc ipython condarc jupyter vim-spell-en.utf-8.add "
-files="${files} ssh/config tmux.conf"
+files="${files} ssh/config tmux.conf config/nvim/init.vim"
 
 ##########
 

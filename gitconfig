@@ -21,7 +21,7 @@
 [push]
     default = upstream
 [pull]
-    rebase = preserve
+    rebase = merges
 [log]
     # Use abbrev SHAs whenever possible/relevant instead of full 40 chars
     abbrevCommit = true

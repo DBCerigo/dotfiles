@@ -229,6 +229,10 @@ Plugin 'powerline/powerline'
 " loaded until then.
 "autocmd VimEnter * SyntasticToggleMode
 Plugin 'ctrlpvim/ctrlp.vim'
+
+" .jsx syntax highlighting
+Plugin 'neoclide/vim-jsx-improve'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

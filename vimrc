@@ -18,6 +18,16 @@ let mapleader="\<Space>"
 
 " # force autoreload on changes to file on disk (nice)
 set autoread
+" Following from https://unix.stackexchange.com/a/383044/151972
+" Triger `autoread` when files changes on disk
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+    autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
+            \ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
+" Notification after file change
+" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 " ##### Paning #####
 " ## File nav and control ##
@@ -72,10 +82,10 @@ endf
 
 " ### Text Wrangling ###
 " ## Auto complete ##
-" Map cmd j to ctr-N for start auto and choose down
-inoremap <D-j> <C-N>
-" Map cmd k to ctr-P for start auto
-inoremap <D-k> <C-P>
+" Map atl j to ctr-N for start auto and choose down
+inoremap <A-j> <C-N>
+" Map atl k to ctr-P for start auto
+inoremap <A-k> <C-P>
 " Auto complete configuration
 set completeopt=longest,menuone
 " ## Bubbling text ##
@@ -93,7 +103,8 @@ set tabstop=4
 " Set the number of spaces per indent to be four spaces
 set shiftwidth=4
 " ## Fix Backspace ##
-" In insert mode, to allow the backspace key to erase previously entered characters, autoindent, and newlines,
+" In insert mode, to allow the backspace key to erase previously entered
+" characters, autoindent, and newlines.
 set bs=indent,eol,start
 " ## vp doesn't replace paste buffer FRESH
 function! RestoreRegister()
@@ -106,12 +117,30 @@ function! s:Repl()
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
-" ### Looks ###
-" ## Line length marker ##
-"   set column highlighting color
+" ### File Specific Settings ###
+" # Line length marker #
+"   Set column highlighting color.
 highlight ColorColumn ctermbg=237 guibg=#2c2d27
-"   set column to be highlighted if Python file
-autocmd FileType python let &colorcolumn="101"
+"   Assuming 99 line limit, so set column 100 to be highlighted.
+"   Set textwidth to 99, to enable proper formatting when using `gq`.
+"   Add or remove `t` from formatoptions to enable or disable auto
+"   linewrapping.
+augroup python_file
+    autocmd!
+    autocmd FileType python
+        \ let &colorcolumn="100" |
+        \ set textwidth=99 |
+        \ set formatoptions-=t
+augroup END
+augroup markdown_file
+    autocmd!
+    autocmd FileType markdown
+        \ let &colorcolumn="100" |
+        \ set textwidth=99 |
+        \ set formatoptions+=t
+augroup END
+
+" ### Looks ###
 " ## A Bundle Manager for some shit ##
 " Probably need it for the solarized install, should figure...
 " using Pathogen to autoload plugins
@@ -164,6 +193,14 @@ nnoremap <leader>m zm
 set spell
 set spelllang=en_gb
 set spellfile=$HOME/.vim-spell-en.utf-8.add
+hi clear SpellBad
+hi SpellBad cterm=underline
+hi clear SpellRare
+hi SpellRare cterm=underline
+hi clear SpellCap
+hi SpellCap cterm=underline
+hi clear SpellLocal
+hi SpellLocal cterm=underline
 inoremap <C-n> <c-g>u<Esc>[s1z=`]a<c-g>u
 noremap <C-n> [s1z=`]
 " Faster load for files larger than 10mb but they not editable
@@ -184,14 +221,20 @@ Plugin 'VundleVim/Vundle.vim'
 " Add all your plugins HERE
 " Plugin 'Valloric/YouCompleteMe'
 "   Can't get you complete me to work...
-"   Adds the status bar (including git branch etc.) at bottom of window
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-"   Syntax checking - could be useful if wanna get really anal - off for now
+" Adds the status bar (including git branch etc.) at bottom of window
+Plugin 'powerline/powerline'
+" Syntax checking - could be useful if wanna get really anal - off for now
 "Plugin 'scrooloose/syntastic'
 " Disable (set to must toggle) it for now - and must use autocmd as plugin not
 " loaded until then.
 "autocmd VimEnter * SyntasticToggleMode
 Plugin 'ctrlpvim/ctrlp.vim'
+
+" .jsx syntax highlighting
+Plugin 'neoclide/vim-jsx-improve'
+
+Plugin 'github/copilot.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

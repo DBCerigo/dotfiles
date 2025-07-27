@@ -185,6 +185,9 @@ nnoremap <leader>z zX
 nnoremap <leader>r zr
 nnoremap <leader>m zm
 " Show tab markers TODO? nah
+"
+" Yank entire file to system clipboard
+nnoremap <leader>Y :%y+<cr>
 
 " ### Writing help ###
 "filetype plugin on

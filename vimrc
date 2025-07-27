@@ -185,6 +185,9 @@ nnoremap <leader>z zX
 nnoremap <leader>r zr
 nnoremap <leader>m zm
 " Show tab markers TODO? nah
+"
+" Yank entire file to system clipboard
+nnoremap <leader>Y :%y+<cr>
 
 " ### Writing help ###
 "filetype plugin on
@@ -234,6 +237,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'neoclide/vim-jsx-improve'
 
 Plugin 'github/copilot.vim'
+
+Plugin 'dense-analysis/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

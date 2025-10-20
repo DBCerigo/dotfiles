@@ -6,8 +6,10 @@ source ~/.git-prompt.sh
 export PS1='(pyenv$(pyenv version-name)) $(__git_ps1 "(%s) "){\t} \u@\h:\w \\$ '
 
 # Added for case insensitive autocomplete
-bind "set completion-ignore-case on"
-bind "set show-all-if-ambiguous on"
+if [[ $- == *i* ]]; then
+    bind "set completion-ignore-case on"
+    bind "set show-all-if-ambiguous on"
+fi
 
 # colour support for OSx and Linux
 if ls --version 2>/dev/null | grep -q 'coreutils'; then

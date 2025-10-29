@@ -42,3 +42,6 @@ Temporary Items
 
 # Dev notebooks
 Untitled*.ipynb
+
+# Claude code
+.claude

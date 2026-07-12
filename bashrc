@@ -42,6 +42,10 @@ alias g='git'
 complete -o default -o nospace -F _git g
 source ~/.git-completion.bash
 
+# re-apply Planck Ctrl<->Cmd swap on demand (the hidutil remap drops on replug / Planck-swap
+# / sleep-wake; see mac-setup step 01). Instant, no password needed.
+alias pk='bash ~/mac-setup/scripts/01-planck-modifier-swap.sh apply'
+
 # specific for setting up pipe to aws instance for Jupyter Notebook serves
 shp () { ssh -L $1:localhost:$1 aws; }
 

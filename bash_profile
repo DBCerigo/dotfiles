@@ -10,3 +10,5 @@ fi
 if [ -f ~/.bashrc_device_specific ]; then
     . ~/.bashrc_device_specific
 fi
+
+. "$HOME/.local/bin/env"

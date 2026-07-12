@@ -6,7 +6,6 @@
     "contrib_nbextensions_help_item/main": true,
     "collapsible_headings/main": true,
     "select_keymap/main": false,
-    "vim_binding/vim_binding": true,
     "spellchecker/main": true
   },
   "Cell": {
@@ -41,5 +40,8 @@
         "l"
       ]
     }
+  },
+  "Notebook": {
+    "Header": true
   }
 }

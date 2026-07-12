@@ -236,9 +236,11 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " .jsx syntax highlighting
 Plugin 'neoclide/vim-jsx-improve'
 
-Plugin 'github/copilot.vim'
+"Plugin 'github/copilot.vim'
 
 Plugin 'dense-analysis/ale'
+
+Plugin 'mphe/vim-gdscript4'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

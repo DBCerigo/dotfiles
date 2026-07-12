@@ -11,4 +11,4 @@ if [ -f ~/.bashrc_device_specific ]; then
     . ~/.bashrc_device_specific
 fi
 
-. "$HOME/.local/bin/env"
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"

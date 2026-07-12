@@ -65,7 +65,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # asdf
-. "$HOME/.asdf/asdf.sh"
+[ -f "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh"
 
-. "$HOME/.local/bin/env"
-eval "$(/home/dbcerigo/.local/bin/mise activate bash)"
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
+command -v mise >/dev/null 2>&1 && eval "$(mise activate bash)"

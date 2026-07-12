@@ -4,10 +4,6 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = /usr/bin/vim
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
 [alias]
     co = checkout
     br = branch
@@ -28,7 +24,7 @@
 [merge]
 	ff = false
 [credential]
-	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+	helper = osxkeychain
 [init]
 	defaultBranch = main
 [filter "lfs"]

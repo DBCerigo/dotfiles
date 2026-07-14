@@ -7,7 +7,7 @@
 " Requirements
 " 1. Install https://github.com/VundleVim/Vundle.vim then [:PluginInstall] in vim
 " 2. Install Pathogen https://github.com/tpope/vim-pathogen
-" 3. Install Solarized http://ethanschoonover.com/solarized/vim-colors-solarized
+" 3. Install solarized8 https://github.com/lifepillar/vim-solarized8 (truecolor-safe solarized)
 
 " ## MAPPINGS ##
 " ### Mapped Space to be my 'leader key' #####
@@ -149,10 +149,12 @@ syntax on
 "filetype plugin indent on !!! think this actually disables the plugin jams
 syntax enable
 " colouring and look of files
+" solarized8 (lifepillar) not the old altercation solarized: it defines gui colours in
+" terminal nvim, so with termguicolors (24-bit, needs a truecolor terminal like ghostty)
+" you get the exact solarized palette without recolouring the terminal itself.
+set termguicolors
 set background=dark
-" don't use in terminal? not sure should figure...
-let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme solarized8
 " Turn on highlighting search
 " Use ':noh' to kill last search
 set hlsearch

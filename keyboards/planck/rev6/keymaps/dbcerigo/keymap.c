@@ -14,7 +14,9 @@ enum planck_keycodes {
   QWERTY = SAFE_RANGE,
   COLEMAK,
   // Custom key functions
-  POUND_EURO
+  POUND_EURO,
+  OS_MAC,  // switch to macOS: swap Ctrl<->GUI + Unicode = Unicode Hex Input (Option+hex)
+  OS_LNX   // switch to Linux: no Ctrl/GUI swap + Unicode = IBus (Ctrl+Shift+U)
 };
 
 #define LOWER MO(_LOWER)
@@ -96,19 +98,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Adjust (Lower + Raise)
  * ,-----------------------------------------------------------------------------------.
- * |      |Reset |Debug |Qwerty|Colemk|      |      |SLEEP |WAKE  |      |POWER |      |
+ * |      |Reset |Debug |Qwerty|Colemk|OS Mac|OS Lnx|SLEEP |WAKE  |      |POWER |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |RGBTog|RGBMOD| HUE+ | SAT+ |KBBrh+|NextTr|Mute  |Vol + |Brigh+|      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |AUDTog|CGTog | HUE- | SAT- |KBBrh-|PrevTr|Play  |Vol - |Brigh-|      |      |
+ * |      |AUDTog|      | HUE- | SAT- |KBBrh-|PrevTr|Play  |Vol - |Brigh-|      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
+ * OS Mac / OS Lnx replace the old single CG_TOGG: each sets BOTH the Ctrl<->GUI swap
+ * and the Unicode input mode (macOS vs Linux) so one key fully switches OS. SLEEP is
+ * the screen-lock on macOS (System Settings > Lock Screen: require password on wake).
  */
 [_ADJUST] = LAYOUT_planck_grid(
-    _______, RESET,   DEBUG,   QWERTY,  COLEMAK, XXXXXXX, XXXXXXX, KC_SLEP, KC_WAKE, XXXXXXX, KC_PWR,  _______,
+    _______, QK_BOOT, DB_TOGG, QWERTY,  COLEMAK, OS_MAC,  OS_LNX,  KC_SLEP, KC_WAKE, XXXXXXX, KC_PWR,  _______,
     _______, RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, KC_MNXT, KC_MUTE, KC_VOLU, KC_BRIU, XXXXXXX, _______,
-    _______, AU_TOG,  CG_TOGG, RGB_HUD, RGB_SAD, RGB_VAD, KC_MPRV, KC_MPLY, KC_VOLD, KC_BRID, XXXXXXX, _______,
+    _______, AU_TOGG, XXXXXXX, RGB_HUD, RGB_SAD, RGB_VAD, KC_MPRV, KC_MPLY, KC_VOLD, KC_BRID, XXXXXXX, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 )
 
@@ -140,6 +145,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         } else {
           send_unicode_string("£");
         }
+      }
+      return false;
+      break;
+    case OS_MAC:
+      if (record->event.pressed) {
+        // Swap Ctrl<->GUI (both sides), like the QK_MAGIC_SWAP_CTL_GUI keycode, and
+        // persist to EEPROM so it survives replug / power-cycle.
+        keymap_config.swap_lctl_lgui = keymap_config.swap_rctl_rgui = true;
+        eeconfig_update_keymap(&keymap_config);
+        // macOS types Unicode via Option+hex ("Unicode Hex Input" must be enabled+active).
+        set_unicode_input_mode(UNICODE_MODE_MACOS);
+      }
+      return false;
+      break;
+    case OS_LNX:
+      if (record->event.pressed) {
+        keymap_config.swap_lctl_lgui = keymap_config.swap_rctl_rgui = false;
+        eeconfig_update_keymap(&keymap_config);
+        set_unicode_input_mode(UNICODE_MODE_LINUX);
       }
       return false;
       break;

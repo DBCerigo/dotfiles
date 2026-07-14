@@ -14,4 +14,6 @@
 // Most tactile encoders have detents every 4 stages
 #define ENCODER_RESOLUTION 4
 
-#define UNICODE_SELECTED_MODES UC_LNX
+// Both OSes selectable; Linux first = default at first boot. The OS_MAC / OS_LNX
+// keys (ADJUST layer) switch the active mode at runtime and persist it to EEPROM.
+#define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX, UNICODE_MODE_MACOS

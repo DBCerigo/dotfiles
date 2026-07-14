@@ -74,4 +74,6 @@ fi
 [ -f "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh"
 
 [ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
+# ~/.local/bin holds mise (and other user-local binaries); ensure it's on PATH
+case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) export PATH="$HOME/.local/bin:$PATH" ;; esac
 command -v mise >/dev/null 2>&1 && eval "$(mise activate bash)"

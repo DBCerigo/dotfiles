@@ -64,6 +64,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# pyenv (Python version manager; guarded to match the asdf/mise sourcing style)
+if command -v pyenv >/dev/null 2>&1; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    eval "$(pyenv init -)"
+fi
+
 # asdf
 [ -f "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh"
 
